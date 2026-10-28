@@ -4,7 +4,7 @@
 |---|---|---|
 | DS0 — the spec | ✅ | the repository's first commit and DS-1 |
 | DS1 — the docs site on Workers | ✅ | DS-2 |
-| DS2 — a baseline | planned | DS-3 |
+| DS2 — a baseline | ✅ | DS-3, tagged `baseline-v1` |
 
 ## Departures from the upstream template
 
