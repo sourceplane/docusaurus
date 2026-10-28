@@ -1,0 +1,11 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**", ".docusaurus/**"],
+      "env": ["PUBLIC_SITE_URL"]
+    }
+  }
+}
