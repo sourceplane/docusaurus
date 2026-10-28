@@ -1,0 +1,21 @@
+// The Worker and the static site `docusaurus build` emits. The site is fully
+// static, so the Worker (worker/index.ts) only hands unmatched requests back
+// to the assets, which answer with build/404.html. Docusaurus writes each
+// page as <path>/index.html and links it as <path> (no trailing slash, its
+// default `trailingSlash`); `drop-trailing-slash` serves <path>/index.html at
+// <path> and redirects <path>/ there, so every link the site renders is
+// answered directly.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "docusaurus-web",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./build",
+    "binding": "ASSETS",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": true }
+}
