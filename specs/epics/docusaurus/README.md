@@ -8,7 +8,7 @@ it somebody else's docs site in one landing.**
 
 | | |
 |---|---|
-| Status | In progress — DS1 on main: the site runs on Workers |
+| Status | ✅ Shipped (`baseline-v1`) — proven offline in Baseline CI; not yet live (risk DS-A) |
 | Upstream | [vercel/examples](https://github.com/vercel/examples) `framework-boilerplates/docusaurus-2` (MIT), at `de86723` (2026-10-16): Docusaurus 2.0.1's classic template |
 | Reference | [nextra-docs](https://github.com/sourceplane/nextra-docs) — the same docs-site scaffolding, tests and bootstrap; [astro-paper](https://github.com/sourceplane/astro-paper) — the same static build behind one Worker |
 | Key | `DS` |

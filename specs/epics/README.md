@@ -7,6 +7,6 @@ folder is the adoption; the merge creates the epic in the workspace.
 
 | Epic | Cluster | Status | What it is |
 |------|---------|--------|------------|
-| [`docusaurus/`](./docusaurus/) | **DS** | In progress (DS1: the site on Workers) | Vercel's Docusaurus template — a docs site and blog, moved to Docusaurus 3 — built static and served as Cloudflare Workers Static Assets behind one Worker, and an Orun baseline that instantiates it (DS2) |
+| [`docusaurus/`](./docusaurus/) | **DS** | ✅ Shipped (`baseline-v1`); not yet live | Vercel's Docusaurus template — a docs site and blog, moved to Docusaurus 3 — built static and served as Cloudflare Workers Static Assets behind one Worker, and an Orun baseline that instantiates it (DS2) |
 
 As-built ≠ intent: what shipped lives in each epic's `IMPLEMENTATION-STATUS.md`.
