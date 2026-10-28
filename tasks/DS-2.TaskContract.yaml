@@ -1,0 +1,18 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: DS-2
+  title: "The docs site on Workers"
+spec:
+  goal: Vercel's Docusaurus template runs on Docusaurus 3 on Cloudflare Workers + Static Assets — built static, served as assets behind one Worker — with its tests, and its README saying how it maps to Vercel
+  affects:
+    - apps/web
+    - tests/web
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+    - README.md
+    - .gitignore
+  doneWhen:
+    - pnpm typecheck, lint, test and build are green
+    - wrangler dev serves every docs page, blog post, tag page, feed and the sitemap, and the site's own 404
+  gates: []
