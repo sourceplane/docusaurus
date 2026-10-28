@@ -1,0 +1,12 @@
+# docusaurus — risks and open questions
+
+| ID | Risk | State | Notes |
+|---|---|---|---|
+| DS-A | `baseline-v1` is not yet proven live | OPEN | Proven offline in Baseline CI: the offline bootstrap with the blueprint's own hooks, the stage lane's own steps in a staged job tree, the site served by `wrangler dev` and smoke-tested with the component's own command, every route read. A console bootstrap closes it |
+| DS-B | The slug is the framework's name | RESOLVED | Docusaurus's packages and client modules, CLI, config file, generated directory, CSS variables and homes, the template's community links and the example credited are masked from the rename and allowed in the leftover sweep, each exactly; the framework's name in the template's own docs and posts too. Any other lowercase `docusaurus`, `docusaurus-` or `DOCUSAURUS_` fails, and the Pascal form the sweep looks for is `DocusaurusBaseline`. `testing/rebrand.test.sh` holds both sides; the placement tier fails on any placed file that spells one of the framework's names with the site's (the e2e caught the first mask missing `@docusaurus/Link`) |
+| DS-C | Docusaurus 2 → 3 changes the template's rendering | ACCEPTED | MDX 3 and React 19; the template's docs and posts build unchanged and the e2e reads every one. Docusaurus 3's blog warns about the template's inline author and untruncated posts; left as warnings |
+| DS-D | A Worker in front of a static site | ACCEPTED | The composition deploys a Worker with its assets; this one only hands unmatched requests back to the assets |
+| DS-E | Absolute links are built in, per environment | ACCEPTED | Canonical links, the sitemap and the blog's feeds carry the origin the deploy built for: the environment's `SITE_URL` (a custom domain), else its workers.dev URL. Attaching a domain is setting `SITE_URL` and merging |
+| DS-F | The trailing-slash rule is two settings | ACCEPTED | Docusaurus's `trailingSlash` (default: links without one, pages as `<path>/index.html`) and `wrangler.jsonc`'s `html_handling: drop-trailing-slash` must agree; the e2e reads every docs page at its rendered link without a redirect, and `/docs/intro/` redirecting |
+| DS-G | stack-tectonic 0.19.0, not 0.20.0 | ACCEPTED | 0.20.0's lane-shared install links each job's `node_modules` out of its tree; the siblings pin 0.19.0 for it and the site would save nothing |
+| DS-H | No search | ACCEPTED | The template has none, and Docusaurus's own (Algolia DocSearch) needs keys a site applies for; the site ships without one, as upstream |

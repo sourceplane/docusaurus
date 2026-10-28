@@ -1,0 +1,30 @@
+# The epic's declaration. metadata.name equals the directory name; metadata.key
+# is the task-key prefix this epic reserves (DS → DS-1, DS-2, …). Owner, target
+# date and health are the platform's — never written here.
+apiVersion: orun.io/v1
+kind: Epic
+metadata:
+  name: docusaurus
+  key: DS
+spec:
+  title: "Vercel's Docusaurus template on Cloudflare Workers"
+  summary: "Vercel's Docusaurus example — the classic template: a tutorial of Markdown and MDX docs with a generated sidebar, a blog with tags, authors, an archive and RSS and Atom feeds, and a React home page — moved from Docusaurus 2 to Docusaurus 3, built fully static and served as Cloudflare Workers Static Assets behind one small Worker, inside the Cirrus baseline's repository conventions, and becomes an Orun baseline that takes a new docs site from nothing to live on stage and prod in one landing."
+  state: started
+  milestones:
+    - name: "DS0 — the spec"
+      exitCriteria:
+        - "the repository is born with its intent, CI, tooling and spec index, and this doc set and the task contracts are on main"
+      tasks: [DS-1]
+    - name: "DS1 — the docs site on Workers"
+      exitCriteria:
+        - "apps/web is the upstream template on Docusaurus 3, built static, with one Worker in front of build/ as Workers Static Assets"
+        - "`pnpm typecheck`, `pnpm lint`, `pnpm test` and `pnpm build` are green"
+        - "`wrangler dev` serves every docs page, blog post, tag page, feed and the sitemap, links without a trailing slash, and the site's own 404"
+        - "the README says how to run, test, preview and deploy it, and how every Vercel piece maps to Cloudflare"
+      tasks: [DS-2]
+    - name: "DS2 — a baseline"
+      exitCriteria:
+        - "blueprint.yaml (the console card) and repo-blueprint.yaml (the build) take a new docs site from nothing to live on stage and prod in one landing, then record it"
+        - "a site built from it carries the site only, renamed throughout to its own name, repository and Worker, with the framework's own names intact"
+        - "Baseline CI is green: contract tests, generated component docs, the blueprint read by the pinned orun, the leak gate, the offline bootstrap and the end-to-end tier"
+      tasks: [DS-3]
